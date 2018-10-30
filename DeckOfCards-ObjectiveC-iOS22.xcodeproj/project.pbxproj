@@ -8,24 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		4706DF3D2188EFC400F60DB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF3C2188EFC400F60DB2 /* AppDelegate.m */; };
-		4706DF402188EFC400F60DB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF3F2188EFC400F60DB2 /* ViewController.m */; };
 		4706DF432188EFC400F60DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4706DF412188EFC400F60DB2 /* Main.storyboard */; };
 		4706DF452188EFC500F60DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4706DF442188EFC500F60DB2 /* Assets.xcassets */; };
 		4706DF482188EFC500F60DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4706DF462188EFC500F60DB2 /* LaunchScreen.storyboard */; };
 		4706DF4B2188EFC500F60DB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF4A2188EFC500F60DB2 /* main.m */; };
+		4706DF592188F67B00F60DB2 /* RAMCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF582188F67B00F60DB2 /* RAMCard.m */; };
+		4706DF5C2189007D00F60DB2 /* RAMPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF5B2189007D00F60DB2 /* RAMPokemonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4706DF382188EFC400F60DB2 /* DeckOfCards-ObjectiveC-iOS22.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DeckOfCards-ObjectiveC-iOS22.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4706DF3B2188EFC400F60DB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4706DF3C2188EFC400F60DB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4706DF3E2188EFC400F60DB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4706DF3F2188EFC400F60DB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4706DF422188EFC400F60DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4706DF442188EFC500F60DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4706DF472188EFC500F60DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4706DF492188EFC500F60DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4706DF4A2188EFC500F60DB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4706DF572188F67B00F60DB2 /* RAMCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMCard.h; sourceTree = "<group>"; };
+		4706DF582188F67B00F60DB2 /* RAMCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMCard.m; sourceTree = "<group>"; };
+		4706DF5A2189007D00F60DB2 /* RAMPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMPokemonController.h; sourceTree = "<group>"; };
+		4706DF5B2189007D00F60DB2 /* RAMPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMPokemonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +61,67 @@
 		4706DF3A2188EFC400F60DB2 /* DeckOfCards-ObjectiveC-iOS22 */ = {
 			isa = PBXGroup;
 			children = (
+				4706DF562188F25300F60DB2 /* New Group5 */,
+				4706DF552188F25200F60DB2 /* ViewController */,
+				4706DF542188F25000F60DB2 /* ModelController */,
+				4706DF532188F24E00F60DB2 /* Model */,
+				4706DF522188F24B00F60DB2 /* UI */,
+				4706DF512188F24800F60DB2 /* Resources */,
+			);
+			path = "DeckOfCards-ObjectiveC-iOS22";
+			sourceTree = "<group>";
+		};
+		4706DF512188F24800F60DB2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				4706DF3B2188EFC400F60DB2 /* AppDelegate.h */,
 				4706DF3C2188EFC400F60DB2 /* AppDelegate.m */,
-				4706DF3E2188EFC400F60DB2 /* ViewController.h */,
-				4706DF3F2188EFC400F60DB2 /* ViewController.m */,
-				4706DF412188EFC400F60DB2 /* Main.storyboard */,
 				4706DF442188EFC500F60DB2 /* Assets.xcassets */,
-				4706DF462188EFC500F60DB2 /* LaunchScreen.storyboard */,
 				4706DF492188EFC500F60DB2 /* Info.plist */,
 				4706DF4A2188EFC500F60DB2 /* main.m */,
 			);
-			path = "DeckOfCards-ObjectiveC-iOS22";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4706DF522188F24B00F60DB2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4706DF412188EFC400F60DB2 /* Main.storyboard */,
+				4706DF462188EFC500F60DB2 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4706DF532188F24E00F60DB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4706DF572188F67B00F60DB2 /* RAMCard.h */,
+				4706DF582188F67B00F60DB2 /* RAMCard.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4706DF542188F25000F60DB2 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				4706DF5A2189007D00F60DB2 /* RAMPokemonController.h */,
+				4706DF5B2189007D00F60DB2 /* RAMPokemonController.m */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		4706DF552188F25200F60DB2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4706DF562188F25300F60DB2 /* New Group5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group5";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +150,7 @@
 		4706DF302188EFC400F60DB2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = RAM;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = ramcomw;
 				TargetAttributes = {
@@ -141,8 +195,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4706DF402188EFC400F60DB2 /* ViewController.m in Sources */,
+				4706DF592188F67B00F60DB2 /* RAMCard.m in Sources */,
 				4706DF4B2188EFC500F60DB2 /* main.m in Sources */,
+				4706DF5C2189007D00F60DB2 /* RAMPokemonController.m in Sources */,
 				4706DF3D2188EFC400F60DB2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7AYJDAX2C;
-				INFOPLIST_FILE = "DeckOfCards-ObjectiveC-iOS22/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DeckOfCards-ObjectiveC-iOS22/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7AYJDAX2C;
-				INFOPLIST_FILE = "DeckOfCards-ObjectiveC-iOS22/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DeckOfCards-ObjectiveC-iOS22/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
