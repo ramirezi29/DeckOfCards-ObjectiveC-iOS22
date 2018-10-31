@@ -8,6 +8,7 @@
 
 #import "RAMCard.h"
 
+
 @implementation RAMCard
 
 - (instancetype)initWithSuit:(NSString *)suit image:(NSString *)image
@@ -26,7 +27,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary<NSString *, id> *)dictionary
 {
-    NSString *suit = [dictionary valueForKey:@"name"];
+    NSString *suit = [dictionary valueForKey:@"suit"];
     
     NSString *image = [dictionary valueForKey:@"image"];
     

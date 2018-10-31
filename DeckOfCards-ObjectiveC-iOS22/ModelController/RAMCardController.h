@@ -13,11 +13,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RAMPokemonController : NSObject
+@interface RAMCardController : NSObject
 
-+(void)drawNewCard: (NSInteger) numberOfCards
-        completion: (void(^)(NSArray<RAMCard *>*cards, NSError *error))completion;
+//+(void)fetchDrawNewCard: (NSInteger *) numberOfCards
+//        completion: (void(^)(NSArray<RAMCard *>*cards, NSError *error))completion;
+//
+//+(void)fetchCardImage: (RAMCard *)card
+//           completion: (void(^)(UIImage *cardImage, NSError *error))completion;
+//
 
++(void)fetchDrawNewCard:(void(^)(NSArray<RAMCard *>*cards, NSError *error))completion;
 +(void)fetchCardImage: (RAMCard *)card
            completion: (void(^)(UIImage *cardImage, NSError *error))completion;
 

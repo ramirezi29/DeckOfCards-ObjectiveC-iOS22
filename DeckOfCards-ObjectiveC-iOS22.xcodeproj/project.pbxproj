@@ -13,7 +13,8 @@
 		4706DF482188EFC500F60DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4706DF462188EFC500F60DB2 /* LaunchScreen.storyboard */; };
 		4706DF4B2188EFC500F60DB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF4A2188EFC500F60DB2 /* main.m */; };
 		4706DF592188F67B00F60DB2 /* RAMCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF582188F67B00F60DB2 /* RAMCard.m */; };
-		4706DF5C2189007D00F60DB2 /* RAMPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF5B2189007D00F60DB2 /* RAMPokemonController.m */; };
+		4706DF5C2189007D00F60DB2 /* RAMCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF5B2189007D00F60DB2 /* RAMCardController.m */; };
+		4706DF62218929F900F60DB2 /* RAMCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4706DF61218929F900F60DB2 /* RAMCardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,10 @@
 		4706DF4A2188EFC500F60DB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4706DF572188F67B00F60DB2 /* RAMCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMCard.h; sourceTree = "<group>"; };
 		4706DF582188F67B00F60DB2 /* RAMCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMCard.m; sourceTree = "<group>"; };
-		4706DF5A2189007D00F60DB2 /* RAMPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMPokemonController.h; sourceTree = "<group>"; };
-		4706DF5B2189007D00F60DB2 /* RAMPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMPokemonController.m; sourceTree = "<group>"; };
+		4706DF5A2189007D00F60DB2 /* RAMCardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMCardController.h; sourceTree = "<group>"; };
+		4706DF5B2189007D00F60DB2 /* RAMCardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMCardController.m; sourceTree = "<group>"; };
+		4706DF60218929F900F60DB2 /* RAMCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMCardViewController.h; sourceTree = "<group>"; };
+		4706DF61218929F900F60DB2 /* RAMCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMCardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +107,8 @@
 		4706DF542188F25000F60DB2 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
-				4706DF5A2189007D00F60DB2 /* RAMPokemonController.h */,
-				4706DF5B2189007D00F60DB2 /* RAMPokemonController.m */,
+				4706DF5A2189007D00F60DB2 /* RAMCardController.h */,
+				4706DF5B2189007D00F60DB2 /* RAMCardController.m */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -113,6 +116,8 @@
 		4706DF552188F25200F60DB2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4706DF60218929F900F60DB2 /* RAMCardViewController.h */,
+				4706DF61218929F900F60DB2 /* RAMCardViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -195,9 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4706DF62218929F900F60DB2 /* RAMCardViewController.m in Sources */,
 				4706DF592188F67B00F60DB2 /* RAMCard.m in Sources */,
 				4706DF4B2188EFC500F60DB2 /* main.m in Sources */,
-				4706DF5C2189007D00F60DB2 /* RAMPokemonController.m in Sources */,
+				4706DF5C2189007D00F60DB2 /* RAMCardController.m in Sources */,
 				4706DF3D2188EFC400F60DB2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
