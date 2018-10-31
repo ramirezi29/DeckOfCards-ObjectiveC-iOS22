@@ -11,9 +11,11 @@
 
 @class RAMCard;
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface RAMCardController : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
++(instancetype)sharedController;
 
 //+(void)fetchDrawNewCard: (NSInteger *) numberOfCards
 //        completion: (void(^)(NSArray<RAMCard *>*cards, NSError *error))completion;
@@ -23,9 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 //
 
 +(void)fetchDrawNewCard:(void(^)(NSArray<RAMCard *>*cards, NSError *error))completion;
+
 +(void)fetchCardImage: (RAMCard *)card
            completion: (void(^)(UIImage *cardImage, NSError *error))completion;
 
-@end
 
 NS_ASSUME_NONNULL_END
+@end

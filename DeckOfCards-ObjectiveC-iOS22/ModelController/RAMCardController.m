@@ -10,11 +10,21 @@
 #import "RAMCard.h"
 
 static NSString * const baseURLAsString = @"https://deckofcardsapi.com/api/deck/new/draw/";
-//https://deckofcardsapi.com/api/deck/new/draw/?count=1";
+//GOAL: https://deckofcardsapi.com/api/deck/new/draw/?count=1";
 
 @implementation RAMCardController
 
-+ (void)fetchDrawNewCard:(void (^)(NSArray<RAMCard *> * _Nonnull, NSError * _Nonnull))completion
++ (instancetype)sharedController
+{
+    static RAMCardController *shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shared = [RAMCardController new];
+    });
+    return shared;
+}
+
++ (void)fetchDrawNewCard:(void (^)(NSArray<RAMCard *> * , NSError * ))completion
 {
     NSURL *baseURL = [[NSURL alloc] initWithString:baseURLAsString];
     
@@ -27,28 +37,55 @@ static NSString * const baseURLAsString = @"https://deckofcardsapi.com/api/deck/
     components.queryItems = @[querySearchItem];
     // components.queryItems = [querySearchItem]
     
-    NSURL *url = [components URL];
+    NSURL *builtUrl = [components URL];
     // guard let url = components?.url else { return }
     
-    NSLog(@"%@", [url absoluteString]);
+    NSLog(@"%@", [builtUrl absoluteString]);
     
-    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[[NSURLSession sharedSession] dataTaskWithURL:builtUrl completionHandler:^(NSData *  data, NSURLResponse *  response, NSError *  error) {
         if (error) {
             NSLog(@"There is an error getting the data from the endpoint %@", [error localizedDescription]);
             completion(nil, error);
             return;
         }
-        if (data == nil)
+        if (!data)
         {
+            NSLog(@"Error: No data returned from data task");
             completion(nil, error);
             return;
         }
+        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        NSLog(@"%@", jsonDictionary);
+        
+        if(!jsonDictionary || ![jsonDictionary isKindOfClass:[NSDictionary class]]) {
+            NSLog(@"JSONDictionary is not a dictionary class");
+            completion(nil, error);
+            return;
+        }
+        
+        NSArray *cardDataArray = jsonDictionary[@"cards"];
+        
+        NSDictionary *cardDictionary = [cardDataArray objectAtIndex:0];
+        
+        // NOTE: - PlaceHolder
+        NSMutableArray *cardsArray = [NSMutableArray array];
+        RAMCard *card = [[RAMCard alloc] initWithDictionary:cardDictionary];
+        [cardsArray addObject:card];
+        completion(cardsArray, nil);
+        // MARK: - For loop
+        //        for (NSDictionary *dataDictionary in cardDictionary) {
+        //            RAMCard *card = [[RAMCard alloc] initWithDictionary:dataDictionary];
+        //            [cardsArray addObject:card];
+        //        }
+        //        completion(cardsArray, nil);
     }]resume];
 }
 
-+(void)fetchCardImage:(RAMCard *)card completion:(void (^)(UIImage * _Nonnull, NSError * _Nonnull))completion
++(void)fetchCardImage:(RAMCard *)card completion:(void (^)(UIImage * , NSError * ))completion
 {
     NSURL *url= [NSURL URLWithString:card.image];
+    
+    //TEST: print
     NSLog(@"%@", [url absoluteString]);
     
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -67,62 +104,6 @@ static NSString * const baseURLAsString = @"https://deckofcardsapi.com/api/deck/
         completion(cardImage, nil);
     }] resume];
 }
-//
-//+ (void)fetchDrawNewCard:(id)completion :(void (^)(NSArray<RAMCard *> * _Nonnull, NSError * _Nonnull))completion
-//{
-//    NSURL *baseURL = [[NSURL alloc] initWithString:baseURLAsString];
-//
-//    // NSURLComponents
-//    NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:true];
-//    // var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-//
-//    NSURLQueryItem *querySearchItem = [NSURLQueryItem queryItemWithName:@"count" value:@"1"];
-//
-//    components.queryItems = @[querySearchItem];
-//    // components.queryItems = [querySearchItem]
-//
-//    NSURL *url = [components URL];
-//    // guard let url = components?.url else { return }
-//
-//    NSLog(@"%@", [url absoluteString]);
-//
-//    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        if (error) {
-//            NSLog(@"There is an error getting the data from the endpoint %@", [error localizedDescription]);
-//            completion(nil, error);
-//            return;
-//        }
-//        if (data == nil)
-//        {
-//            completion(nil, error);
-//            return;
-//        }
-//    }]resume];
-//}
-//
-//+(void)fetchCardImage:(RAMCard *)card completion:(void (^)(UIImage * _Nonnull, NSError * _Nonnull))completion
-//{
-//    NSURL *url= [NSURL URLWithString:card.image];
-//    NSLog(@"%@", [url absoluteString]);
-//
-//    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        if (error){
-//
-//            NSLog(@"Error in %s, %@, %@", __PRETTY_FUNCTION__, error, error.localizedDescription);
-//            completion(nil, error);
-//            return;
-//        }
-//        if (!data){
-//            NSLog(@"No Data Avaliable");
-//            completion(nil, error);
-//            return;
-//        }
-//        UIImage *cardImage = [UIImage imageWithData:data];
-//        completion(cardImage, nil);
-//    }] resume];
-//}
 
+@end
 
-
-    @end
-    

@@ -64,7 +64,6 @@
 		4706DF3A2188EFC400F60DB2 /* DeckOfCards-ObjectiveC-iOS22 */ = {
 			isa = PBXGroup;
 			children = (
-				4706DF562188F25300F60DB2 /* New Group5 */,
 				4706DF552188F25200F60DB2 /* ViewController */,
 				4706DF542188F25000F60DB2 /* ModelController */,
 				4706DF532188F24E00F60DB2 /* Model */,
@@ -120,13 +119,6 @@
 				4706DF61218929F900F60DB2 /* RAMCardViewController.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4706DF562188F25300F60DB2 /* New Group5 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group5";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

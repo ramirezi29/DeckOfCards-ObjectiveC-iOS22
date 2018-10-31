@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface RAMCard : NSObject
+NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) NSString *suit;
 @property (nonatomic, copy, readonly) NSString *image;
@@ -24,6 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithDictionary:(NSDictionary<NSString *, id> *)dictionary;
 
+NS_ASSUME_NONNULL_END
 @end
 
-NS_ASSUME_NONNULL_END

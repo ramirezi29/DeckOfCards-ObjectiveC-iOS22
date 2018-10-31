@@ -11,6 +11,7 @@
 #import "RAMCard.h"
 
 @interface RAMCardViewController ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *cardImageView;
 @property (weak, nonatomic) IBOutlet UILabel *labelLabel;
 @property (weak, nonatomic) IBOutlet UIButton *drawButton;
@@ -21,13 +22,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
+    
 }
 
+
+
 - (IBAction)drawButtonTapped:(UIButton *)sender {
-    [RAMCardController fetchDrawNewCard:^(NSArray<RAMCard *> * _Nonnull cards, NSError * _Nonnull error) {
-        [RAMCardController fetchCardImage:cards completion:^(UIImage * _Nonnull cardImage, NSError * _Nonnull error) {
+    [RAMCardController fetchDrawNewCard:^(NSArray<RAMCard *> *cards, NSError *  error) {
+        
+        [RAMCardController fetchCardImage:cards[0] completion:^(UIImage *  cardImage, NSError *  error) {
+            
             dispatch_async(dispatch_get_main_queue(), ^{
+                self.labelLabel.text = cards[0].suit;
                 self.cardImageView.image = cardImage;
             });
         }];
